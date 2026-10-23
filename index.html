@@ -32,6 +32,23 @@
     .img-cover { object-fit: cover; width: 100%; height: 100%; }
     .shadow-soft { box-shadow: 0 20px 50px -20px rgba(5, 150, 105, 0.25); }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2193045264609764');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2193045264609764&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body class="bg-[#F9FAFB] text-[#111827] antialiased">
 
@@ -482,11 +499,12 @@
      * Example: "https://assets.mailerlite.com/jsonp/XXXXXX/forms/YYYYYY/subscribe"
      * Leave empty to skip remote subscribe (download still works).
      */
-    const MAILERLITE_SUBSCRIBE_URL = "";
+    const MAILERLITE_SUBSCRIBE_URL = "https://assets.mailerlite.com/jsonp/2692078/forms/202122616828331068/subscribe";
 
     let selectedProduct = PRODUCTS[2];
 
     function buyTracker() {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { value: 4.99, currency: 'USD', content_name: 'Meal Prep Tracker' });
       window.open(TRACKER_URL + "?wanted=true", "_blank");
       goToEmail();
     }
@@ -559,6 +577,7 @@
       btn.textContent = "Sending…";
 
       await subscribeMailerLite(email);
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Free 5 High-Protein Recipes PDF' });
 
       btn.disabled = false;
       btn.textContent = "Get PDF";
@@ -630,6 +649,7 @@
     }
 
     function checkout() {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { currency: 'USD', content_name: selectedProduct.title || selectedProduct.name || '' });
       window.open(selectedProduct.href + "?wanted=true", "_blank");
     }
 
