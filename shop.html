@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdant · High-Protein Plant Cookbooks</title>
+  <meta name="description" content="High-protein vegan and vegetarian recipes with macros on every page. Most under 15 minutes." />
+  <meta property="og:title" content="Verdant · High-Protein Plant Recipes" />
+  <meta property="og:description" content="Quick, protein-dense plant meals with macros on every recipe." />
+  <meta property="og:image" content="images/cover_bundle.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+    :root {
+      --green: #10B981;
+      --green-deep: #059669;
+      --ink: #111827;
+    }
+    body { font-family: 'Outfit', system-ui, sans-serif; }
+    .display-font { font-family: 'Fraunces', Georgia, serif; }
+    .hero-bg { background: linear-gradient(165deg, #F9FAFB 0%, #ECFDF5 55%, #F9FAFB 100%); }
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 32px -12px rgb(0 0 0 / 0.12); }
+    .selected {
+      border-color: #10B981 !important;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2), 0 12px 24px -10px rgb(0 0 0 / 0.1);
+    }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .accordion-open .accordion-content { max-height: 240px; }
+    .accordion-open .fa-chevron-down { transform: rotate(180deg); }
+    .img-cover { object-fit: cover; width: 100%; height: 100%; }
+    .shadow-soft { box-shadow: 0 20px 50px -20px rgba(5, 150, 105, 0.25); }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2193045264609764');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2193045264609764&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body class="bg-[#F9FAFB] text-[#111827] antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100/80">
+    <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5" onclick="location.reload()">
+        <div class="w-9 h-9 bg-[#10B981] rounded-xl flex items-center justify-center text-white text-base shadow-sm">🌱</div>
+        <span class="display-font text-xl font-semibold tracking-tight">verdant</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-600">
+        <a href="#offer" class="hover:text-[#10B981] transition-colors">Cookbooks</a>
+        <a href="#features" class="hover:text-[#10B981] transition-colors">Features</a>
+        <a href="#faq" class="hover:text-[#10B981] transition-colors">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════ 1. MICRO OFFER ═══════════ -->
+  <section id="micro-gate" class="hidden hero-bg py-12 md:py-16">
+    <div class="max-w-5xl mx-auto px-5">
+      <div class="text-center mb-8 md:mb-10">
+        <div class="inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 text-sm font-medium border border-[#10B981]/20 shadow-sm">
+          <span class="w-2 h-2 bg-[#10B981] rounded-full animate-pulse"></span>
+          Limited launch offer
+        </div>
+        <h1 class="display-font text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mt-5 leading-[1.15]">
+          Before your free recipes,<br class="hidden sm:block" />
+          <span class="text-[#059669]">plan the whole week.</span>
+        </h1>
+        <p class="mt-4 text-base md:text-lg text-gray-600 max-w-lg mx-auto">
+          Add the 7-Day High-Protein Meal Prep Tracker &amp; Grocery List for only <strong class="text-[#111827]">$4.99</strong>
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-soft overflow-hidden border border-gray-100">
+        <div class="grid sm:grid-cols-5">
+          <div class="sm:col-span-2 aspect-[4/3] sm:aspect-auto sm:min-h-[240px] bg-[#ECFDF5]">
+            <img src="images/cover_tracker.jpg" alt="7-Day Meal Prep Tracker" class="img-cover" />
+          </div>
+          <div class="sm:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+            <div class="flex justify-between items-start gap-3">
+              <div>
+                <div class="text-xs font-semibold text-[#059669] tracking-wide uppercase mb-1">Add-on</div>
+                <div class="font-semibold text-xl leading-snug">Meal Prep Tracker + Grocery List</div>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-2xl font-bold text-[#10B981]">$4.99</div>
+                <div class="text-[10px] text-gray-500 font-medium">ONE-TIME</div>
+              </div>
+            </div>
+            <ul class="mt-4 space-y-2 text-gray-600 text-sm">
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#10B981] text-xs"></i> Day-by-day prep calendar</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#10B981] text-xs"></i> Aisle-organized grocery list</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-[#10B981] text-xs"></i> Protein + calorie targets</li>
+            </ul>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <button type="button" onclick="buyTracker()"
+                class="bg-[#10B981] hover:bg-[#059669] text-white font-semibold py-3.5 px-4 rounded-2xl transition active:scale-[0.98] text-sm sm:text-base">
+                Yes! Buy for $4.99
+              </button>
+              <button type="button" onclick="skipTracker()"
+                class="border border-gray-200 hover:bg-gray-50 font-medium py-3.5 px-4 rounded-2xl transition text-sm sm:text-base text-gray-700">
+                No thanks, continue
+              </button>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-3">Opens Gumroad checkout · Then continue to your free guide</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 2. EMAIL GATE ═══════════ -->
+  <section id="email-gate" class="hidden py-16 md:py-24 bg-white">
+    <div class="max-w-md mx-auto px-5 text-center">
+      <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-emerald-50 flex items-center justify-center text-3xl">📩</div>
+      <h2 class="display-font text-3xl md:text-4xl font-semibold tracking-tight">Your free guide is ready</h2>
+      <p class="mt-3 text-gray-600 leading-relaxed">
+        Enter your email for the <span class="font-medium text-gray-900">5 High-Protein Vegan &amp; Vegetarian Recipes PDF</span>
+      </p>
+      <form id="email-form" class="mt-8 text-left">
+        <label class="sr-only" for="email-input">Email</label>
+        <div class="relative">
+          <input type="email" id="email-input" required placeholder="you@email.com" autocomplete="email"
+            class="w-full px-5 py-4 pr-[7.5rem] border border-gray-200 rounded-2xl text-base focus:outline-none focus:border-[#10B981] focus:ring-4 focus:ring-[#10B981]/15" />
+          <button type="submit" id="email-submit-btn"
+            class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-[#111827] hover:bg-black text-white px-5 py-2.5 rounded-xl font-medium text-sm transition">
+            Get PDF
+          </button>
+        </div>
+        <p id="email-error" class="hidden text-red-500 text-sm mt-2"></p>
+        <p class="text-xs text-gray-400 mt-3 text-center">We&rsquo;ll email the guide and you can download it on the next screen.</p>
+      </form>
+      <button type="button" onclick="skipEmail()" class="text-sm text-gray-400 hover:text-gray-600 mt-6 transition">
+        No thanks, skip the free guide
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════ 2b. DOWNLOAD FREE GUIDE ═══════════ -->
+  <section id="download-gate" class="hidden py-16 md:py-24 bg-white">
+    <div class="max-w-md mx-auto px-5 text-center">
+      <div class="w-16 h-16 mx-auto mb-5 rounded-2xl bg-emerald-100 flex items-center justify-center text-3xl">✅</div>
+      <h2 class="display-font text-3xl md:text-4xl font-semibold tracking-tight">You&rsquo;re in</h2>
+      <p class="mt-3 text-gray-600 leading-relaxed">
+        Download your free guide below. A copy is also on its way to
+        <span id="download-email-label" class="font-medium text-gray-900">your inbox</span>.
+      </p>
+      <a id="download-pdf-btn" href="Verdant_Free_5_High-Protein_Recipes.pdf" download
+        class="mt-8 inline-flex items-center justify-center gap-2 w-full bg-[#10B981] hover:bg-[#059669] text-white font-semibold py-4 px-6 rounded-2xl transition">
+        <i class="fa-solid fa-download"></i>
+        Download free PDF
+      </a>
+      <p class="text-xs text-gray-400 mt-3">5 high-protein vegan &amp; vegetarian recipes</p>
+      <button type="button" onclick="showMain()"
+        class="mt-8 w-full border border-gray-200 hover:bg-gray-50 font-medium py-3.5 px-6 rounded-2xl transition text-gray-800">
+        Continue to cookbooks →
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════ 3. MAIN SALES ═══════════ -->
+  <main id="main-sales">
+    <div class="max-w-6xl mx-auto px-5 pt-10 md:pt-14 pb-28">
+
+      <!-- Hero -->
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+        <div class="lg:w-[42%]">
+          <div class="inline-flex items-center bg-emerald-100 text-emerald-800 rounded-full px-3.5 py-1 text-xs font-semibold mb-5 tracking-wide">
+            50+ RECIPES · UNDER 15 MIN
+          </div>
+          <h1 class="display-font text-4xl md:text-[2.75rem] font-semibold tracking-tight leading-[1.12]">
+            High-protein plant meals that <span class="text-[#059669]">actually fill you up.</span>
+          </h1>
+          <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+            Delicious vegan &amp; vegetarian recipes with protein and calories on every page.
+          </p>
+          <button type="button" onclick="document.getElementById('offer').scrollIntoView({behavior:'smooth'})"
+            class="mt-8 bg-[#10B981] hover:bg-[#059669] text-white px-7 py-3.5 rounded-2xl font-semibold transition shadow-sm shadow-emerald-200">
+            See the cookbooks →
+          </button>
+        </div>
+        <div class="lg:w-[58%] w-full">
+          <div class="relative">
+            <div class="rounded-3xl overflow-hidden shadow-soft border border-white/50 aspect-[16/10] bg-emerald-50">
+              <img src="images/cover_bundle.jpg" alt="Verdant Ultimate Bundle" class="img-cover" />
+            </div>
+            <!-- floating mini cards -->
+            <div class="hidden sm:block absolute -bottom-4 -left-2 md:left-4 w-28 md:w-32 rounded-xl overflow-hidden shadow-lg border-2 border-white rotate-[-6deg]">
+              <img src="images/thumb_vegan.jpg" alt="" class="img-cover aspect-square" />
+            </div>
+            <div class="hidden sm:block absolute -bottom-2 -right-2 md:right-6 w-28 md:w-32 rounded-xl overflow-hidden shadow-lg border-2 border-white rotate-[5deg]">
+              <img src="images/thumb_vegetarian.jpg" alt="" class="img-cover aspect-square" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <section id="offer" class="mt-20 md:mt-28">
+        <div class="text-center mb-10">
+          <h2 class="display-font text-3xl md:text-4xl font-semibold tracking-tight">Choose your collection</h2>
+          <p class="mt-2 text-gray-500 text-sm">Tap a plan to see exactly what’s inside · Instant download on Gumroad</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto" id="product-cards"></div>
+
+        <!-- Product detail panel (updates when a card is selected) -->
+        <div id="product-detail" class="max-w-5xl mx-auto mt-8 bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
+          <div class="grid md:grid-cols-5">
+            <div class="md:col-span-2 aspect-[16/11] md:aspect-auto md:min-h-[280px] bg-emerald-50">
+              <img id="detail-cover" src="images/cover_bundle.jpg" alt="" class="img-cover" />
+            </div>
+            <div class="md:col-span-3 p-6 md:p-8">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <div id="detail-badge" class="inline-block text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full tracking-wide mb-2">BEST VALUE</div>
+                  <h3 id="detail-title" class="display-font text-2xl md:text-3xl font-semibold tracking-tight">Ultimate Bundle + Desserts</h3>
+                  <p id="detail-tagline" class="mt-2 text-gray-600 text-sm md:text-base leading-relaxed">Both cookbooks plus the high-protein desserts guide.</p>
+                </div>
+                <div class="text-right shrink-0">
+                  <div id="detail-price" class="text-3xl font-bold text-[#059669]">$14.99</div>
+                  <div class="text-[11px] text-gray-400 font-medium">ONE-TIME · PDF</div>
+                </div>
+              </div>
+
+              <div class="mt-5 grid grid-cols-3 gap-2 max-w-md">
+                <div class="rounded-2xl bg-gray-50 border border-gray-100 px-3 py-3 text-center">
+                  <div id="detail-stat-recipes" class="text-lg font-bold text-gray-900">100+</div>
+                  <div class="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Recipes</div>
+                </div>
+                <div class="rounded-2xl bg-gray-50 border border-gray-100 px-3 py-3 text-center">
+                  <div id="detail-stat-protein" class="text-lg font-bold text-gray-900">25–38g</div>
+                  <div class="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Protein / plate</div>
+                </div>
+                <div class="rounded-2xl bg-gray-50 border border-gray-100 px-3 py-3 text-center">
+                  <div id="detail-stat-time" class="text-lg font-bold text-gray-900">&lt;15 min</div>
+                  <div class="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Most plates</div>
+                </div>
+              </div>
+
+              <ul id="detail-includes" class="mt-5 space-y-2 text-sm text-gray-700"></ul>
+
+              <button type="button" onclick="checkout()"
+                class="mt-6 w-full sm:w-auto bg-[#111827] hover:bg-black text-white font-semibold py-3.5 px-8 rounded-2xl transition">
+                Buy this on Gumroad →
+              </button>
+              <p class="text-xs text-gray-400 mt-2">Secure checkout · Instant digital delivery</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compact price bar -->
+        <div class="max-w-md mx-auto mt-6 bg-white border border-gray-200 rounded-3xl p-5 shadow-sm flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <img id="order-thumb" src="images/thumb_bundle.jpg" alt="" class="w-11 h-11 rounded-lg object-cover border border-gray-100 shrink-0" />
+            <div class="min-w-0">
+              <div id="selected-name" class="font-medium text-gray-800 text-sm leading-snug truncate">Ultimate Bundle + Desserts</div>
+              <div id="selected-price" class="text-lg font-bold tabular-nums">$14.99</div>
+            </div>
+          </div>
+          <button type="button" onclick="checkout()"
+            class="shrink-0 bg-[#10B981] hover:bg-[#059669] text-white font-semibold py-2.5 px-5 rounded-xl text-sm transition">
+            Buy now
+          </button>
+        </div>
+      </section>
+
+      <!-- What's in each plan -->
+      <section class="mt-16 max-w-5xl mx-auto">
+        <h3 class="text-center text-xs font-semibold tracking-[0.2em] text-gray-400 mb-6">WHAT’S IN EACH PLAN</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white rounded-3xl border border-gray-100 p-5">
+            <img src="images/thumb_vegan.jpg" alt="" class="w-full aspect-square object-cover rounded-2xl mb-4" />
+            <div class="text-xs font-bold text-[#059669] tracking-wide">VEGAN · $9.99</div>
+            <div class="font-semibold text-lg mt-1">50 High-Protein Vegan Recipes</div>
+            <ul class="mt-3 space-y-1.5 text-sm text-gray-600">
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> 50 fully vegan plates</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Tofu, tempeh, lentils, seitan</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Protein + calories on every page</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Most under 15 minutes</li>
+              <li class="flex gap-2 text-gray-400"><span>—</span> No eggs or dairy</li>
+              <li class="flex gap-2 text-gray-400"><span>—</span> Desserts guide not included</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-3xl border border-gray-100 p-5">
+            <img src="images/thumb_vegetarian.jpg" alt="" class="w-full aspect-square object-cover rounded-2xl mb-4" />
+            <div class="text-xs font-bold text-[#059669] tracking-wide">VEGETARIAN · $9.99</div>
+            <div class="font-semibold text-lg mt-1">50 High-Protein Vegetarian Recipes</div>
+            <ul class="mt-3 space-y-1.5 text-sm text-gray-600">
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> 50 meat-free plates</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Eggs, yogurt, cottage cheese, halloumi</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Protein + calories on every page</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Weeknight-friendly steps</li>
+              <li class="flex gap-2 text-gray-400"><span>—</span> Not fully vegan</li>
+              <li class="flex gap-2 text-gray-400"><span>—</span> Desserts guide not included</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-3xl border-2 border-[#10B981] p-5 relative">
+            <div class="absolute -top-2.5 left-5 text-[10px] font-bold bg-[#10B981] text-white px-2.5 py-0.5 rounded-full">BEST VALUE</div>
+            <img src="images/thumb_bundle.jpg" alt="" class="w-full aspect-square object-cover rounded-2xl mb-4" />
+            <div class="text-xs font-bold text-[#059669] tracking-wide">BUNDLE · $14.99</div>
+            <div class="font-semibold text-lg mt-1">Ultimate Bundle + Desserts</div>
+            <ul class="mt-3 space-y-1.5 text-sm text-gray-600">
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> All 50 vegan recipes</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> All 50 vegetarian recipes</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Bonus: High-Protein Desserts Guide</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> 100+ savory + dessert recipes</li>
+              <li class="flex gap-2"><span class="text-[#10B981]">✓</span> Save vs buying both books ($19.98)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="mt-20 grid sm:grid-cols-3 gap-5">
+        <div class="bg-white p-6 rounded-3xl border border-gray-100">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-50 flex items-center justify-center text-xl mb-4">📊</div>
+          <div class="font-semibold text-lg">Macros on every recipe</div>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">Protein and calorie counts printed clearly at the top of each page.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-gray-100">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-50 flex items-center justify-center text-xl mb-4">⏱️</div>
+          <div class="font-semibold text-lg">Most under 15 minutes</div>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">Weeknight-friendly recipes. No complicated techniques.</p>
+        </div>
+        <div class="bg-white p-6 rounded-3xl border border-gray-100">
+          <div class="w-11 h-11 rounded-2xl bg-emerald-50 flex items-center justify-center text-xl mb-4">📋</div>
+          <div class="font-semibold text-lg">Step-by-step clarity</div>
+          <p class="mt-2 text-gray-600 text-sm leading-relaxed">Numbered instructions. One clear action at a time.</p>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="mt-20">
+        <h3 class="text-center text-xs font-semibold tracking-[0.2em] text-gray-400 mb-8">WHAT READERS SAY</h3>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="bg-white p-6 rounded-3xl border border-gray-100">
+            <div class="text-[#10B981] text-sm tracking-wide">★★★★★</div>
+            <p class="mt-4 text-gray-700 leading-relaxed">“The tofu crunch bowl is 34g protein and takes 12 minutes. I actually cook now.”</p>
+            <div class="mt-5 text-sm font-semibold">Maya Chen</div>
+          </div>
+          <div class="bg-white p-6 rounded-3xl border border-gray-100">
+            <div class="text-[#10B981] text-sm tracking-wide">★★★★★</div>
+            <p class="mt-4 text-gray-700 leading-relaxed">“The meal prep tracker made everything easy. I finally stick to my protein goals.”</p>
+            <div class="mt-5 text-sm font-semibold">Andre Ellis</div>
+          </div>
+          <div class="bg-white p-6 rounded-3xl border border-gray-100">
+            <div class="text-[#10B981] text-sm tracking-wide">★★★★★</div>
+            <p class="mt-4 text-gray-700 leading-relaxed">“The bundle is incredible. The chocolate protein mousse is my new favorite dessert.”</p>
+            <div class="mt-5 text-sm font-semibold">Lena Ortiz</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-20 max-w-2xl mx-auto">
+        <h3 class="display-font text-3xl font-semibold text-center mb-8">FAQ</h3>
+        <div>
+          <div onclick="toggleAccordion(this)" class="accordion border-b border-gray-200 py-5 cursor-pointer select-none">
+            <div class="flex justify-between items-center gap-4">
+              <span class="font-medium">Are the recipes really high-protein?</span>
+              <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
+            </div>
+            <div class="accordion-content text-gray-600 text-sm mt-3 pr-8 leading-relaxed">
+              Yes. Every recipe lists estimated protein and calories. Most savory plates are about 25–38g protein per serving.
+            </div>
+          </div>
+          <div onclick="toggleAccordion(this)" class="accordion border-b border-gray-200 py-5 cursor-pointer select-none">
+            <div class="flex justify-between items-center gap-4">
+              <span class="font-medium">Vegan vs vegetarian books?</span>
+              <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
+            </div>
+            <div class="accordion-content text-gray-600 text-sm mt-3 pr-8 leading-relaxed">
+              Vegan uses tofu, tempeh, lentils, and seitan. Vegetarian includes eggs and dairy (Greek yogurt, cottage cheese, halloumi, etc.).
+            </div>
+          </div>
+          <div onclick="toggleAccordion(this)" class="accordion border-b border-gray-200 py-5 cursor-pointer select-none">
+            <div class="flex justify-between items-center gap-4">
+              <span class="font-medium">What is in the Ultimate Bundle?</span>
+              <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
+            </div>
+            <div class="accordion-content text-gray-600 text-sm mt-3 pr-8 leading-relaxed">
+              Both cookbooks (100 savory recipes) plus the High-Protein Desserts Guide as a bonus. Best value vs buying the books separately.
+            </div>
+          </div>
+          <div onclick="toggleAccordion(this)" class="accordion border-b border-gray-200 py-5 cursor-pointer select-none">
+            <div class="flex justify-between items-center gap-4">
+              <span class="font-medium">How fast do I get access?</span>
+              <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
+            </div>
+            <div class="accordion-content text-gray-600 text-sm mt-3 pr-8 leading-relaxed">
+              Instant download via Gumroad right after checkout. Check your email for the receipt and files.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <p class="text-center mt-16 text-xs text-gray-400">© Verdant · Digital products delivered by Gumroad</p>
+    </div>
+  </main>
+
+  <!-- Mobile sticky bar -->
+  <div id="sticky-bar" class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur border-t border-gray-200 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] z-50 hidden">
+    <div class="px-4 py-3 flex items-center justify-between gap-3 max-w-lg mx-auto">
+      <div class="min-w-0 flex items-center gap-3">
+        <img id="sticky-thumb" src="images/thumb_bundle.jpg" alt="" class="w-11 h-11 rounded-lg object-cover shrink-0 border border-gray-100" />
+        <div class="min-w-0">
+          <div id="sticky-name" class="font-medium text-sm truncate">Ultimate Bundle</div>
+          <div id="sticky-price" class="text-base font-bold text-[#10B981]">$14.99</div>
+        </div>
+      </div>
+      <button type="button" onclick="checkout()"
+        class="shrink-0 bg-[#10B981] hover:bg-[#059669] text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition">
+        Buy Now
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const PRODUCTS = [
+      {
+        id: "vegan",
+        name: "50 Vegan Recipes",
+        price: 9.99,
+        href: "https://restiq45.gumroad.com/l/verdant-vegan-50",
+        cover: "images/cover_vegan.jpg",
+        thumb: "images/thumb_vegan.jpg",
+        badge: null,
+        tagline: "Fifty fully vegan, protein-dense plates with macros on every page.",
+        recipes: "50",
+        protein: "25–38g",
+        time: "<15 min",
+        includes: [
+          "50 high-protein vegan recipes (PDF)",
+          "Tofu, tempeh, lentils, chickpeas, seitan",
+          "Protein (g) and calories listed on every recipe",
+          "Numbered steps — most under 15 minutes",
+          "No eggs, no dairy"
+        ]
+      },
+      {
+        id: "vegetarian",
+        name: "50 Vegetarian Recipes",
+        price: 9.99,
+        href: "https://restiq45.gumroad.com/l/verdant-vegetarian-50",
+        cover: "images/cover_vegetarian.jpg",
+        thumb: "images/thumb_vegetarian.jpg",
+        badge: null,
+        tagline: "Meat-free plates that use eggs and dairy where they earn the protein.",
+        recipes: "50",
+        protein: "22–36g",
+        time: "<15 min",
+        includes: [
+          "50 high-protein vegetarian recipes (PDF)",
+          "Eggs, Greek yogurt, cottage cheese, halloumi, paneer",
+          "Protein (g) and calories listed on every recipe",
+          "Weeknight-friendly, clear steps",
+          "Not fully vegan"
+        ]
+      },
+      {
+        id: "bundle",
+        name: "Ultimate Bundle + Desserts",
+        price: 14.99,
+        href: "https://restiq45.gumroad.com/l/verdant-ultimate-bundle",
+        cover: "images/cover_bundle.jpg",
+        thumb: "images/thumb_bundle.jpg",
+        badge: "BEST VALUE",
+        tagline: "Both cookbooks (100 savory recipes) plus the high-protein desserts guide.",
+        recipes: "100+",
+        protein: "25–38g",
+        time: "<15 min",
+        includes: [
+          "50 High-Protein Vegan Recipes",
+          "50 High-Protein Vegetarian Recipes",
+          "Bonus: High-Protein Desserts Guide (~20 treats)",
+          "Everything in one download (ZIP)",
+          "Best value vs $19.98 for both books alone"
+        ]
+      }
+    ];
+    const TRACKER_URL = "https://restiq45.gumroad.com/l/verdant-7-day-tracker";
+
+    /**
+     * MailerLite — paste your form action URL from MailerLite → Forms → your form → Embed → "Custom form".
+     * Example: "https://assets.mailerlite.com/jsonp/XXXXXX/forms/YYYYYY/subscribe"
+     * Leave empty to skip remote subscribe (download still works).
+     */
+    const MAILERLITE_SUBSCRIBE_URL = "https://assets.mailerlite.com/jsonp/2692078/forms/202122616828331068/subscribe";
+
+    let selectedProduct = PRODUCTS[2];
+
+    function buyTracker() {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { value: 4.99, currency: 'USD', content_name: 'Meal Prep Tracker' });
+      window.open(TRACKER_URL + "?wanted=true", "_blank");
+      goToEmail();
+    }
+
+    function skipTracker() {
+      goToEmail();
+    }
+
+    function goToEmail() {
+      document.getElementById("micro-gate").classList.add("hidden");
+      document.getElementById("download-gate").classList.add("hidden");
+      document.getElementById("email-gate").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showDownload(email) {
+      document.getElementById("email-gate").classList.add("hidden");
+      document.getElementById("download-gate").classList.remove("hidden");
+      document.getElementById("download-email-label").textContent = email || "your inbox";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showMain() {
+      document.getElementById("email-gate").classList.add("hidden");
+      document.getElementById("download-gate").classList.add("hidden");
+      document.getElementById("main-sales").classList.remove("hidden");
+      renderProducts();
+      updatePriceDisplay();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.addEventListener("scroll", onScrollSticky, { passive: true });
+    }
+
+    function skipEmail() { showMain(); }
+
+    async function subscribeMailerLite(email) {
+      if (!MAILERLITE_SUBSCRIBE_URL) {
+        console.warn("MailerLite URL not set — skipping email automation. Download still works.");
+        return { ok: false, skipped: true };
+      }
+      try {
+        const body = new URLSearchParams();
+        body.set("fields[email]", email);
+        body.set("ml-submit", "1");
+        body.set("ajax", "1");
+        const res = await fetch(MAILERLITE_SUBSCRIBE_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
+          mode: "cors"
+        });
+        return { ok: res.ok || res.status === 200, status: res.status };
+      } catch (err) {
+        console.error("MailerLite subscribe failed", err);
+        return { ok: false, error: err };
+      }
+    }
+
+    document.getElementById("email-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email-input").value.trim();
+      const err = document.getElementById("email-error");
+      const btn = document.getElementById("email-submit-btn");
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        err.textContent = "Please enter a valid email address";
+        err.classList.remove("hidden");
+        return;
+      }
+      err.classList.add("hidden");
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+
+      await subscribeMailerLite(email);
+      if (window.fbq) fbq('track', 'Lead', { content_name: 'Free 5 High-Protein Recipes PDF' });
+
+      btn.disabled = false;
+      btn.textContent = "Get PDF";
+      showDownload(email);
+    });
+
+    function renderProducts() {
+      const el = document.getElementById("product-cards");
+      el.innerHTML = "";
+      PRODUCTS.forEach((p) => {
+        const selected = p.id === selectedProduct.id;
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "text-left bg-white border-2 rounded-3xl overflow-hidden cursor-pointer card-hover " +
+          (selected ? "selected border-[#10B981]" : "border-gray-100");
+        card.innerHTML = `
+          <div class="aspect-[16/10] bg-emerald-50 overflow-hidden">
+            <img src="${p.cover}" alt="${p.name}" class="img-cover transition duration-300 ${selected ? "scale-[1.02]" : ""}" />
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-start gap-2">
+              <div>
+                <div class="font-semibold leading-snug">${p.name}</div>
+                ${p.badge ? `<span class="inline-block text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full mt-2 tracking-wide">${p.badge}</span>` : ""}
+              </div>
+              <div class="text-xl font-bold tabular-nums shrink-0">$${p.price.toFixed(2)}</div>
+            </div>
+          </div>`;
+        card.onclick = () => {
+          selectedProduct = p;
+          renderProducts();
+          updatePriceDisplay();
+          const detail = document.getElementById("product-detail");
+          if (detail) detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        };
+        el.appendChild(card);
+      });
+    }
+
+    function updatePriceDisplay() {
+      const p = selectedProduct;
+      document.getElementById("selected-name").textContent = p.name;
+      document.getElementById("selected-price").textContent = "$" + p.price.toFixed(2);
+      const thumb = document.getElementById("order-thumb");
+      if (thumb) thumb.src = p.thumb;
+      document.getElementById("sticky-name").textContent = p.name;
+      document.getElementById("sticky-price").textContent = "$" + p.price.toFixed(2);
+      document.getElementById("sticky-thumb").src = p.thumb;
+
+      // Detail panel
+      document.getElementById("detail-cover").src = p.cover;
+      document.getElementById("detail-title").textContent = p.name;
+      document.getElementById("detail-tagline").textContent = p.tagline;
+      document.getElementById("detail-price").textContent = "$" + p.price.toFixed(2);
+      document.getElementById("detail-stat-recipes").textContent = p.recipes;
+      document.getElementById("detail-stat-protein").textContent = p.protein;
+      document.getElementById("detail-stat-time").textContent = p.time;
+      const badge = document.getElementById("detail-badge");
+      if (p.badge) {
+        badge.textContent = p.badge;
+        badge.classList.remove("hidden");
+      } else {
+        badge.classList.add("hidden");
+      }
+      const list = document.getElementById("detail-includes");
+      list.innerHTML = (p.includes || []).map(function (item) {
+        return '<li class="flex items-start gap-2"><i class="fa-solid fa-check text-[#10B981] mt-0.5 text-xs"></i><span>' + item + '</span></li>';
+      }).join("");
+    }
+
+    function checkout() {
+      if (window.fbq) fbq('track', 'InitiateCheckout', { currency: 'USD', content_name: selectedProduct.title || selectedProduct.name || '' });
+      window.open(selectedProduct.href + "?wanted=true", "_blank");
+    }
+
+    function toggleAccordion(el) {
+      const wasOpen = el.classList.contains("accordion-open");
+      document.querySelectorAll(".accordion").forEach((a) => a.classList.remove("accordion-open"));
+      if (!wasOpen) el.classList.add("accordion-open");
+    }
+
+    // Direct-sale page: show the cookbooks immediately
+    renderProducts();
+    updatePriceDisplay();
+    window.addEventListener("scroll", onScrollSticky, { passive: true });
+    if (window.fbq) fbq('track', 'ViewContent', { content_name: 'Verdant Cookbooks', currency: 'USD', value: 14.99 });
+
+    function onScrollSticky() {
+      const bar = document.getElementById("sticky-bar");
+      if (window.scrollY > 650) bar.classList.remove("hidden");
+      else bar.classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
